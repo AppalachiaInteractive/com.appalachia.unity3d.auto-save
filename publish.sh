@@ -41,7 +41,7 @@ if [[ "$1" == "patch" || "$1" == "minor" || "$1" == "major" || "$1" == "prepatch
 
     echo "Publishing"
 
-    npm publish $package --registry "http://localhost:4873"
+    npm publish .dist/$package --registry "http://localhost:4873"
     
     if [ $? -ne 0 ]; then
         exit $?        
@@ -51,7 +51,7 @@ if [[ "$1" == "patch" || "$1" == "minor" || "$1" == "major" || "$1" == "prepatch
     echo "Sending to github as release"
 
     gh release create $package_version .dist/*.tgz -F CHANGELOG.md
-    
+
     if [ $? -ne 0 ]; then
         exit $?        
     fi 
