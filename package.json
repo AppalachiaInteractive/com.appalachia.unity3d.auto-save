@@ -19,8 +19,8 @@
     "type": "git"
   },
   "scripts": {
-    "preversion": "sed \"s|## Unreleased|## Unreleased \n\n##$npm_package_version\n`git log --oneline $(git describe --abbrev=0 $(git describe --abbrev=0)^)..HEAD`|g\" CHANGELOG.md",
-    "version": "git add .",
-    "postversion": "git push && git push --tags"
+    "preversion": ".package/preversion.sh",
+    "version": ".package/version.sh",
+    "postversion": ".package/postversion.sh"
   }
 }
