@@ -19,8 +19,8 @@
     "type": "git"
   },
   "scripts": {
-    "preversion": "./.package/preversion.sh",
-    "version": "./.package/version.sh",
-    "postversion": "./.package/postversion.sh"
+    "preversion": ".package/preversion.sh",
+    "version": ".package/version.sh",
+    "postversion": ".package/postversion.sh"
   }
 }
