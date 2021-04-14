@@ -1,0 +1,22 @@
+{
+  "name": "com.appalachia.unity3d.auto-save",
+  "displayName": "Unity3D Auto Save",
+  "version": "0.1.0",
+  "unity": "2020.3",
+  "description": "Editor-only auto-save functionality for Unity3D projects, with configurable preferences.",
+  "keywords": [
+    "Scripts",
+    "Tool"
+  ],
+  "category": "Tool",
+  "license": "MIT",
+  "author": {
+    "name": "Appalachia Interactive"
+  },
+  "dependencies": {
+  },
+  "repository": {
+    "url": "https://github.com/AppalachiaInteractive/com.appalachia.unity3d.auto-save.git",
+    "type": "git"
+  }
+}
