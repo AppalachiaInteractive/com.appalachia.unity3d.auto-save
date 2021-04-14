@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.2.7
+* 3a62305 Cleanup of temp files from publish
+* 1e55861 Fixing shell output issue for changelog updates
+* 173cc22 0.2.6
+
+
 ## 0.2.6
 * 173cc22 0.2.6
 * 139dbd6 Fixing tarball path
