@@ -10,5 +10,13 @@ clean_message=$(echo "$message" | sed -z 's/\n/\\n/g')
 find="## Unreleased"
 replace="## Unreleased\n\n## $version\n$clean_message"
 
-sed "s|$find|$replace|g" CHANGELOG.md > CHANGELOG.md 
-sed "s|\n\n\n|\n\n|g" CHANGELOG.md > CHANGELOG.md 
+echo '--------------'
+#cat CHANGELOG.md
+mv CHANGELOG.md CHANGELOG.md.bk
+sed "s|$find|$replace|g" CHANGELOG.md.bk > CHANGELOG.md.bk2
+echo '--------------'
+#cat CHANGELOG.md
+sed "s|\n\n\n|\n\n|g" CHANGELOG.md.bk2 > CHANGELOG.md
+echo '--------------'
+cat CHANGELOG.md
+echo '--------------'
