@@ -11,7 +11,7 @@ if [[ "$1" == "patch" || "$1" == "minor" || "$1" == "major" || "$1" == "prepatch
     | grep version \
     | head -1 \
     | awk -F: '{ print $2 }' \
-    | sed 's/[",]//g'
+    | sed 's/[",]//g' \
     | tr -d '[[:space:]]')
 
     rm -f .dist
