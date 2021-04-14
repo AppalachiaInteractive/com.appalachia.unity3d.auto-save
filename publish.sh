@@ -50,7 +50,7 @@ if [[ "$1" == "patch" || "$1" == "minor" || "$1" == "major" || "$1" == "prepatch
     #use release notes from a file
     echo "Sending to github as release"
 
-    gh release create $package_version .dist/*.tgz -F CHANGELOG.md
+    gh release create v$package_version .dist/*.tgz -F CHANGELOG.md
 
     if [ $? -ne 0 ]; then
         exit $?        
