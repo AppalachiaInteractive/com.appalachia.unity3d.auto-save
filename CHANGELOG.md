@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.3.0
+* 46d5aec Updating workspace and fixing github release tag
+* 92ad920 0.2.7
+* 3a62305 Cleanup of temp files from publish
+
+
 ## 0.2.7
 * 3a62305 Cleanup of temp files from publish
 * 1e55861 Fixing shell output issue for changelog updates
