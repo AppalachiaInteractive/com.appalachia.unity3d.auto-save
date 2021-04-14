@@ -14,7 +14,8 @@ if [[ "$1" == "patch" || "$1" == "minor" || "$1" == "major" || "$1" == "prepatch
     | sed 's/[",]//g' \
     | tr -d '[[:space:]]')
 
-    rm -f .dist
+    rm -f .dist/*
+    rmdir .dist
     
     if [ $? -ne 0 ]; then
         exit $?        
@@ -50,13 +51,15 @@ if [[ "$1" == "patch" || "$1" == "minor" || "$1" == "major" || "$1" == "prepatch
     echo "Sending to github as release"
 
     gh release create $package_version .dist/*.tgz -F CHANGELOG.md
+    
     if [ $? -ne 0 ]; then
         exit $?        
     fi 
 
     echo "Destroying tarballs"
     
-    rm -f .dist
+    rm -f .dist/*
+    rmdir .dist
 
 
 else
