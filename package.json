@@ -19,8 +19,13 @@
     "type": "git"
   },
   "scripts": {
-    "preversion": "bash $AI_PACKAGE_HOME\\preversion.sh",
-    "version": "bash $AI_PACKAGE_HOME\\version.sh",
-    "postversion": "bash $AI_PACKAGE_HOME\\postversion.sh"
+    "preversion": "ai.sh package preversion",
+    "version": "ai.sh package version",
+    "postversion": "ai.sh package postversion",
+    "prepack": "ai.sh package prepack",
+    "postpack": "ai.sh package postpack",
+    "prepublishOnly": "ai.sh package prepublishOnly",
+    "publish": "ai.sh package publish",
+    "postpublish": "ai.sh package postpublish"
   }
 }
