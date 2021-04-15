@@ -19,8 +19,8 @@
     "type": "git"
   },
   "scripts": {
-    "preversion": "bash .package\\preversion.sh",
-    "version": "bash .package\\version.sh",
-    "postversion": "bash .package\\postversion.sh"
+    "preversion": "bash $AI_PACKAGE_HOME\\preversion.sh",
+    "version": "bash $AI_PACKAGE_HOME\\version.sh",
+    "postversion": "bash $AI_PACKAGE_HOME\\postversion.sh"
   }
 }
