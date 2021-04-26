@@ -12,6 +12,12 @@
 ## Releasing
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| 22436b6 | 2021-04-26 | Chris Schubert | Updating assembly definition |
+
+
+ ## Tag: v0.4.1
+| Hash | Date | Author | Changes |
+|------|------|--------|---------|
 | e7741f1 | 2021-04-26 | Chris Schubert | Updating project name |
 
 
