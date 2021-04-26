@@ -7,7 +7,7 @@ using UnityEngine;
 
 #endregion
 
-namespace Appalachia.Internal.AutoSave
+namespace Appalachia.AutoSave
 {
     [InitializeOnLoad]
     public static class EditorApplicationUpdateHandler

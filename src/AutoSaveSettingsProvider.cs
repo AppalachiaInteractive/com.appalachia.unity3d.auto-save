@@ -8,7 +8,7 @@ using UnityEngine;
 
 #if UNITY_EDITOR
 
-namespace Appalachia.Internal.AutoSave
+namespace Appalachia.AutoSave
 {
     [InitializeOnLoad]
     public static class AutoSaveSettingsProvider
