@@ -12,6 +12,12 @@
 ## Releasing
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| e7741f1 | 2021-04-26 | Chris Schubert | Updating project name |
+
+
+ ## Tag: v0.4.0
+| Hash | Date | Author | Changes |
+|------|------|--------|---------|
 | 33aa27f | 2021-04-26 | Chris Schubert | Updating package scripts for npm |
 | 3a2486d | 2021-04-26 | Chris Schubert | Updating repo name |
 | c58a5b0 | 2021-04-26 | Chris Schubert | Updating extension |
