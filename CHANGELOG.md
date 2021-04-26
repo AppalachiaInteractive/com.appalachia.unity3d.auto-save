@@ -12,6 +12,12 @@
 ## Releasing
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| 217c43f | 2021-04-26 | Chris Schubert | Updating to exclude dist |
+
+
+ ## Tag: v0.4.2
+| Hash | Date | Author | Changes |
+|------|------|--------|---------|
 | 22436b6 | 2021-04-26 | Chris Schubert | Updating assembly definition |
 
 
