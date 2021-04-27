@@ -1,7 +1,7 @@
 {
   "name": "com.appalachia.unity3d.editor.auto-save",
   "displayName": "Unity3D Auto Save",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "unity": "2020.3",
   "description": "Editor-only auto-save functionality for Unity3D projects, with configurable preferences.",
   "keywords": [

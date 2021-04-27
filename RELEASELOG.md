@@ -9,9 +9,10 @@
 ```
 
 
-# 0.4.3
+# 0.4.4
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| e893c23 | 2021-04-27 | Chris Schubert | Updating .gitignore for dist folder |
 | 217c43f | 2021-04-26 | Chris Schubert | Updating to exclude dist |
 | 22436b6 | 2021-04-26 | Chris Schubert | Updating assembly definition |
 | e7741f1 | 2021-04-26 | Chris Schubert | Updating project name |

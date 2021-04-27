@@ -12,6 +12,12 @@
 ## Releasing
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| e893c23 | 2021-04-27 | Chris Schubert | Updating .gitignore for dist folder |
+
+
+ ## Tag: v0.4.3
+| Hash | Date | Author | Changes |
+|------|------|--------|---------|
 | 217c43f | 2021-04-26 | Chris Schubert | Updating to exclude dist |
 
 
