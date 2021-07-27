@@ -1,5 +1,4 @@
 ```
-/c/Users/Chris/com.appalachia/appa/cmd/print/RELEASE.sh
  ______   ______   __       ______   ______   ______   ______    
 /\  == \ /\  ___\ /\ \     /\  ___\ /\  __ \ /\  ___\ /\  ___\   
 \ \  __< \ \  __\ \ \ \____\ \  __\ \ \  __ \\ \___  \\ \  __\   
@@ -9,13 +8,9 @@
 ```
 
 
-# 0.4.4
+## Released Changes
+
+
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
-| e893c23 | 2021-04-27 | Chris Schubert | Updating .gitignore for dist folder |
-| 217c43f | 2021-04-26 | Chris Schubert | Updating to exclude dist |
-| 22436b6 | 2021-04-26 | Chris Schubert | Updating assembly definition |
-| e7741f1 | 2021-04-26 | Chris Schubert | Updating project name |
-| 33aa27f | 2021-04-26 | Chris Schubert | Updating package scripts for npm |
-| 3a2486d | 2021-04-26 | Chris Schubert | Updating repo name |
-| c58a5b0 | 2021-04-26 | Chris Schubert | Updating extension |
+| 7f0fced055edfe39b03b6478375b145087ab6277 | 2021-07-27 | Chris Schubert | Updates |
