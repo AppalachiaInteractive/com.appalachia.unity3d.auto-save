@@ -20,17 +20,17 @@ namespace Appalachia.AutoSave
             var savePath = Application.dataPath + "/" + AutoSaver.Location;
             return savePath;
         }
-        
+
         internal static string GetRelativeSaveDirectory()
         {
             var relativeSavePath = "Assets/" + AutoSaver.Location + "/";
             return relativeSavePath;
         }
-        
+
         internal static void CreateSaveDirectory()
         {
             var saveDirectory = GetSaveDirectory();
-            
+
             if (!Directory.Exists(saveDirectory))
             {
                 Directory.CreateDirectory(saveDirectory);
@@ -45,13 +45,20 @@ namespace Appalachia.AutoSave
             var scene = SceneManager.GetActiveScene();
             var relativeSavePath = GetRelativeSaveDirectory();
             var autosaveFileName = GetAutoSaveFileName();
+            var sceneName = scene.name;
+            if (string.IsNullOrWhiteSpace(sceneName))
+            {
+                sceneName = "unsaved";
+            }
             
-            var filename = "{0}.{1}.unity".Format(scene.name, autosaveFileName);
+            var filename = "{0}.{1}.unity".Format(sceneName, autosaveFileName);
             var savePath = "{0}{1}".Format(relativeSavePath, filename);
 
             EditorSceneManager.SaveScene(scene, savePath, true);
             var dif = AutoSaver.EditorTimer - AutoSaver.LastSave - AutoSaver.SaveInterval;
-            AutoSaver.LastSave = (dif < AutoSaver.SaveInterval) && (dif > 0) ? AutoSaver.EditorTimer - dif : AutoSaver.EditorTimer;
+            AutoSaver.LastSave = (dif < AutoSaver.SaveInterval) && (dif > 0)
+                ? AutoSaver.EditorTimer - dif
+                : AutoSaver.EditorTimer;
 
             if (AutoSaver.Debug)
             {
@@ -63,14 +70,17 @@ namespace Appalachia.AutoSave
         {
             var filename = AutoSaver.FileName;
             var savePath = GetSaveDirectory();
-            
+
             var files = Directory.GetFiles(savePath)
                                  .Select(f => f.Replace('\\', '/'))
-                                 .Where(f => f.EndsWith(".unity") && f.Substring(f.LastIndexOf('/') + 1).StartsWith(filename))
+                                 .Where(
+                                      f => f.EndsWith(".unity") &&
+                                           f.Substring(f.LastIndexOf('/') + 1).StartsWith(filename)
+                                  )
                                  .ToArray();
             if (files.Length == 0)
             {
-                return "{0}_00".Format(filename);
+                return "{0}.00".Format(filename);
             }
 
             var times = files.Select(File.GetCreationTime).ToList();
@@ -81,10 +91,10 @@ namespace Appalachia.AutoSave
             if (int.TryParse(files[ind].Substring(files[ind].Length - 2), out count))
             {
                 count = (count + 1) % AutoSaver.FilesCount;
-                return "{0}_{1}".Format(filename, count.ToString("D2"));
+                return "{0}.{1}".Format(filename, count.ToString("D2"));
             }
 
-            return "{0}_00".Format(filename);
+            return "{0}.00".Format(filename);
         }
     }
 }

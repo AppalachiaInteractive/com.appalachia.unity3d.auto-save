@@ -17,7 +17,7 @@ namespace Appalachia.AutoSave
         private static readonly CachedInt _filesCount = new CachedInt("{0}/files-count".Format(PREFIX), 10);
         private static readonly CachedFloat _lastSave = new CachedFloat("{0}/last-save".Format(PREFIX), 0);
         private static readonly CachedString _fileName = new CachedString("{0}/file-name".Format(PREFIX), "AutoSave");
-        private static readonly CachedString _location = new CachedString("{0}/location".Format(PREFIX), "_autosave");
+        private static readonly CachedString _location = new CachedString("{0}/location".Format(PREFIX),  "_autosave");
 
         internal static float SaveInterval
         {
@@ -48,7 +48,6 @@ namespace Appalachia.AutoSave
             get => _fileName.Current;
             set => _fileName.Current = value;
         }
-
 
         internal static float LastSave
         {

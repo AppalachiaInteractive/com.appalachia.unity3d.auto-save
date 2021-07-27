@@ -9,7 +9,7 @@ namespace Appalachia.AutoSave
         public CachedString(string key, string defaultValue) : base(key, defaultValue)
         {
         }
-            
+
         protected override string Get(string key, string defaultValue)
         {
             var value = EditorPrefs.GetString(key, defaultValue);

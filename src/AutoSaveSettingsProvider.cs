@@ -31,14 +31,27 @@ namespace Appalachia.AutoSave
             AutoSaver.Enable = EditorGUI.ToggleLeft(r, "Enable", AutoSaver.Enable);
             GUI.enabled = AutoSaver.Enable;
 
-            AutoSaver.FilesCount = Mathf.Clamp(EditorGUILayout.IntField("Maximum Files Version", AutoSaver.FilesCount), 1, 99);
-            AutoSaver.SaveInterval = Mathf.Clamp(EditorGUILayout.IntField("Save Every (Minutes)", (int) (AutoSaver.SaveInterval / 60)), 1, 60) * 60;
+            AutoSaver.FilesCount = Mathf.Clamp(
+                EditorGUILayout.IntField("Maximum Files Version", AutoSaver.FilesCount),
+                1,
+                99
+            );
+            AutoSaver.SaveInterval = Mathf.Clamp(
+                                         EditorGUILayout.IntField(
+                                             "Save Every (Minutes)",
+                                             (int) (AutoSaver.SaveInterval / 60)
+                                         ),
+                                         1,
+                                         60
+                                     ) *
+                                     60;
 
             var location = EditorGUILayout.TextField("Location", AutoSaver.Location).Replace('\\', '/');
             if (location.IndexOfAny(Path.GetInvalidPathChars()) >= 0)
             {
                 location = AutoSaver.Location;
             }
+
             var fileName = EditorGUILayout.TextField("FileName", AutoSaver.FileName).Replace('\\', '/');
             if (fileName.IndexOfAny(Path.GetInvalidPathChars()) >= 0)
             {
