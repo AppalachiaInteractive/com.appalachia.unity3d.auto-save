@@ -12,6 +12,12 @@
 ## Releasing
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| d733efad8664d053d6446a306cabac03780f90ff | 2021-09-25 | Chris Schubert | Removing extra package file |
+
+
+ ## Tag: `v0.4.5`
+| Hash | Date | Author | Changes |
+|------|------|--------|---------|
 | 7f0fced055edfe39b03b6478375b145087ab6277 | 2021-07-27 | Chris Schubert | Updates |
 
 
