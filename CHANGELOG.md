@@ -12,6 +12,12 @@
 ## Releasing
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| af4e1a6c98e5cb824bea98406f7e1372fba0bc0c | 2021-09-28 | Chris Schubert | Packaging and CI update |
+
+
+ ## Tag: `v0.4.6`
+| Hash | Date | Author | Changes |
+|------|------|--------|---------|
 | d733efad8664d053d6446a306cabac03780f90ff | 2021-09-25 | Chris Schubert | Removing extra package file |
 
 

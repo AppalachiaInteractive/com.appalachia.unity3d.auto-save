@@ -10,7 +10,7 @@
 
 ## Released Changes
 
-
+`0.4.7`
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
 
