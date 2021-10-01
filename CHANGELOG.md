@@ -12,6 +12,12 @@
 ## Releasing
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| 7dcb6daec53989a6f0ee497a363b6f6fbb385f7e | 2021-10-01 | Chris Schubert | Fixing autosave rollover and updating naming format |
+
+
+ ## Tag: `v0.4.7`
+| Hash | Date | Author | Changes |
+|------|------|--------|---------|
 | af4e1a6c98e5cb824bea98406f7e1372fba0bc0c | 2021-09-28 | Chris Schubert | Packaging and CI update |
 
 
