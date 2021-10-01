@@ -1,6 +1,7 @@
 #region
 
 using System.IO;
+using Appalachia.AutoSave.Configuration;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,10 +9,10 @@ using UnityEngine;
 
 #if UNITY_EDITOR
 
-namespace Appalachia.AutoSave
+namespace Appalachia.AutoSave.Configuration
 {
     [InitializeOnLoad]
-    public static class AutoSaveSettingsProvider
+    internal static class AutoSaveSettingsProvider
     {
         [SettingsProvider]
         private static SettingsProvider MyNewPrefCode0()
@@ -23,48 +24,48 @@ namespace Appalachia.AutoSave
         // ReSharper disable once UnusedParameter.Local
         private static void OnPreferencesGUI(string searchContext)
         {
-            EditorGUILayout.LabelField("Assets/" + AutoSaver.Location + " - Auto-Save Location");
+            EditorGUILayout.LabelField("Assets/" + AutoSaverConfiguration.Location + " - Auto-Save Location");
             var r = EditorGUILayout.GetControlRect(GUILayout.Height(30));
             GUI.Box(r, "");
             r.x += 7;
             r.y += 7;
-            AutoSaver.Enable = EditorGUI.ToggleLeft(r, "Enable", AutoSaver.Enable);
-            GUI.enabled = AutoSaver.Enable;
+            AutoSaverConfiguration.Enable = EditorGUI.ToggleLeft(r, "Enable", AutoSaverConfiguration.Enable);
+            GUI.enabled = AutoSaverConfiguration.Enable;
 
-            AutoSaver.FilesCount = Mathf.Clamp(
-                EditorGUILayout.IntField("Maximum Files Version", AutoSaver.FilesCount),
+            AutoSaverConfiguration.FilesCount = Mathf.Clamp(
+                EditorGUILayout.IntField("Maximum Files Version", AutoSaverConfiguration.FilesCount),
                 1,
                 99
             );
-            AutoSaver.SaveInterval = Mathf.Clamp(
+            AutoSaverConfiguration.SaveInterval = Mathf.Clamp(
                                          EditorGUILayout.IntField(
                                              "Save Every (Minutes)",
-                                             (int) (AutoSaver.SaveInterval / 60)
+                                             (int) (AutoSaverConfiguration.SaveInterval / 60)
                                          ),
                                          1,
                                          60
                                      ) *
                                      60;
 
-            var location = EditorGUILayout.TextField("Location", AutoSaver.Location).Replace('\\', '/');
+            var location = EditorGUILayout.TextField("Location", AutoSaverConfiguration.Location).Replace('\\', '/');
             if (location.IndexOfAny(Path.GetInvalidPathChars()) >= 0)
             {
-                location = AutoSaver.Location;
+                location = AutoSaverConfiguration.Location;
             }
 
-            var fileName = EditorGUILayout.TextField("FileName", AutoSaver.FileName).Replace('\\', '/');
+            var fileName = EditorGUILayout.TextField("FileName", AutoSaverConfiguration.FileName).Replace('\\', '/');
             if (fileName.IndexOfAny(Path.GetInvalidPathChars()) >= 0)
             {
-                fileName = AutoSaver.FileName;
+                fileName = AutoSaverConfiguration.FileName;
             }
 
-            AutoSaver.Debug = EditorGUILayout.Toggle("Log", AutoSaver.Debug);
+            AutoSaverConfiguration.Debug = EditorGUILayout.Toggle("Log", AutoSaverConfiguration.Debug);
 
             if (GUI.changed)
             {
-                AutoSaver.Location = location;
-                AutoSaver.FileName = fileName;
-                AutoSaver.LastSave = AutoSaver.EditorTimer;
+                AutoSaverConfiguration.Location = location;
+                AutoSaverConfiguration.FileName = fileName;
+                AutoSaverConfiguration.LastSave = AutoSaverConfiguration.EditorTimer;
             }
 
             GUI.enabled = true;

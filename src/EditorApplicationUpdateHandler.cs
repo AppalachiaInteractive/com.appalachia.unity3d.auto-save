@@ -2,6 +2,7 @@
 
 #region
 
+using Appalachia.AutoSave.Configuration;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ using UnityEngine;
 namespace Appalachia.AutoSave
 {
     [InitializeOnLoad]
-    public static class EditorApplicationUpdateHandler
+    internal static class EditorApplicationUpdateHandler
     {
         private static float? _launchTime;
         private static float _editorTimer;
@@ -23,7 +24,7 @@ namespace Appalachia.AutoSave
 
         public static void OnEditorApplicationUpdate()
         {
-            if (!AutoSaver.Enable)
+            if (!AutoSaverConfiguration.Enable)
             {
                 return;
             }
@@ -32,7 +33,7 @@ namespace Appalachia.AutoSave
             {
                 if (_launchTime == null)
                 {
-                    _launchTime = AutoSaver.EditorTimer;
+                    _launchTime = AutoSaverConfiguration.EditorTimer;
                 }
 
                 return;
@@ -40,25 +41,23 @@ namespace Appalachia.AutoSave
 
             if (_launchTime != null)
             {
-                AutoSaver.LastSave += AutoSaver.EditorTimer - _launchTime.Value;
+                AutoSaverConfiguration.LastSave += AutoSaverConfiguration.EditorTimer - _launchTime.Value;
                 _launchTime = null;
             }
 
-            if (Mathf.Abs(_editorTimer - AutoSaver.EditorTimer) < 4)
+            if (Mathf.Abs(_editorTimer - AutoSaverConfiguration.EditorTimer) < 4)
             {
                 return;
             }
 
-            _editorTimer = AutoSaver.EditorTimer;
+            _editorTimer = AutoSaverConfiguration.EditorTimer;
 
-            if (Mathf.Abs(AutoSaver.LastSave - AutoSaver.EditorTimer) >= (AutoSaver.SaveInterval * 2))
-            {
-                AutoSaver.LastSave = AutoSaver.EditorTimer;
-            }
+            var saveAge = AutoSaverConfiguration.LastSave - AutoSaverConfiguration.EditorTimer;
 
-            if (Mathf.Abs(AutoSaver.LastSave - AutoSaver.EditorTimer) >= AutoSaver.SaveInterval)
+
+            if (Mathf.Abs(saveAge) >= AutoSaverConfiguration.SaveInterval)
             {
-                AutoSaveIO.SaveScene();
+                AutoSaver.Execute();
                 EditorApplication.update -= OnEditorApplicationUpdate;
                 EditorApplication.update += OnEditorApplicationUpdate;
             }

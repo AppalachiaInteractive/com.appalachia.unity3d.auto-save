@@ -2,7 +2,7 @@
 
 namespace Appalachia.AutoSave
 {
-    public static class AutoSaveExtensions
+    internal static class AutoSaveExtensions
     {
         public static string Format(this string formatString, params object[] args)
         {

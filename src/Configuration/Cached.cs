@@ -1,8 +1,8 @@
 #if UNITY_EDITOR
 
-namespace Appalachia.AutoSave
+namespace Appalachia.AutoSave.Configuration
 {
-    public abstract class Cached<T, TD>
+    internal abstract class Cached<T, TD>
     {
         private readonly string _key;
         private T _lastValue;
@@ -39,6 +39,7 @@ namespace Appalachia.AutoSave
                 }
 
                 Set(_key, value);
+                _lastValue = value;
             }
         }
 

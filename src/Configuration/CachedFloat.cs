@@ -6,9 +6,9 @@ using UnityEditor;
 
 #endregion
 
-namespace Appalachia.AutoSave
+namespace Appalachia.AutoSave.Configuration
 {
-    public class CachedFloat : Cached<float?, float>
+    internal class CachedFloat : Cached<float?, float>
     {
         public CachedFloat(string key, float defaultValue) : base(key, defaultValue)
         {

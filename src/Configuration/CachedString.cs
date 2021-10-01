@@ -2,9 +2,9 @@
 
 using UnityEditor;
 
-namespace Appalachia.AutoSave
+namespace Appalachia.AutoSave.Configuration
 {
-    public class CachedString : Cached<string, string>
+    internal class CachedString : Cached<string, string>
     {
         public CachedString(string key, string defaultValue) : base(key, defaultValue)
         {
