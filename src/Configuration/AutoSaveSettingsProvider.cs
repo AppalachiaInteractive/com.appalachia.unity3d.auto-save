@@ -1,7 +1,6 @@
 #region
 
 using System.IO;
-using Appalachia.AutoSave.Configuration;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ using UnityEngine;
 
 #if UNITY_EDITOR
 
-namespace Appalachia.AutoSave.Configuration
+namespace Appalachia.Editor.AutoSave.Configuration
 {
     [InitializeOnLoad]
     internal static class AutoSaveSettingsProvider

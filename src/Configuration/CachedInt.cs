@@ -6,7 +6,7 @@ using UnityEditor;
 
 #endregion
 
-namespace Appalachia.AutoSave.Configuration
+namespace Appalachia.Editor.AutoSave.Configuration
 {
     internal class CachedInt : Cached<int?, int>
     {

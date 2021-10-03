@@ -1,10 +1,10 @@
-using System;
 using System.IO;
-using Appalachia.AutoSave.Configuration;
+using Appalachia.Editor.AutoSave.Configuration;
+using Appalachia.Editor.AutoSave.Metadata;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-namespace Appalachia.AutoSave
+namespace Appalachia.Editor.AutoSave
 {
     internal static class AutoSaver
     {

@@ -1,9 +1,8 @@
 #region
 
-using System;
 using System.IO;
 using System.Linq;
-using Appalachia.AutoSave.Configuration;
+using Appalachia.Editor.AutoSave.Configuration;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -13,7 +12,7 @@ using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
 
-namespace Appalachia.AutoSave
+namespace Appalachia.Editor.AutoSave
 {
     internal static class AutoSaverIO
     {
