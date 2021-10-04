@@ -12,6 +12,12 @@
 ## Releasing
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| 39cf4557de23082f6acba191f27201abe1423502 | 2021-10-03 | Chris Schubert | Organizing Appalachia packages for package management |
+
+
+ ## Tag: `v0.4.8`
+| Hash | Date | Author | Changes |
+|------|------|--------|---------|
 | 7dcb6daec53989a6f0ee497a363b6f6fbb385f7e | 2021-10-01 | Chris Schubert | Fixing autosave rollover and updating naming format |
 
 
