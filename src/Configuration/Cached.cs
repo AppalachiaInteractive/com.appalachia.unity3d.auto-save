@@ -4,9 +4,9 @@ namespace Appalachia.Editor.AutoSave.Configuration
 {
     internal abstract class Cached<T, TD>
     {
+        private readonly TD _defaultValue;
         private readonly string _key;
         private T _lastValue;
-        private readonly TD _defaultValue;
 
         protected Cached(string key, TD defaultValue)
         {

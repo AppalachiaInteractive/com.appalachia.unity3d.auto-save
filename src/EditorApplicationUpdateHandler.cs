@@ -41,7 +41,8 @@ namespace Appalachia.Editor.AutoSave
 
             if (_launchTime != null)
             {
-                AutoSaverConfiguration.LastSave += AutoSaverConfiguration.EditorTimer - _launchTime.Value;
+                AutoSaverConfiguration.LastSave +=
+                    AutoSaverConfiguration.EditorTimer - _launchTime.Value;
                 _launchTime = null;
             }
 
@@ -53,7 +54,6 @@ namespace Appalachia.Editor.AutoSave
             _editorTimer = AutoSaverConfiguration.EditorTimer;
 
             var saveAge = AutoSaverConfiguration.LastSave - AutoSaverConfiguration.EditorTimer;
-
 
             if (Mathf.Abs(saveAge) >= AutoSaverConfiguration.SaveInterval)
             {

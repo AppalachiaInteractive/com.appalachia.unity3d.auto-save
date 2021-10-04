@@ -32,7 +32,7 @@ namespace Appalachia.Editor.AutoSave
             CreateSaveDirectory();
 
             EditorSceneManager.SaveScene(scene, savePath, true);
-            
+
             if (AutoSaverConfiguration.Debug)
             {
                 Debug.Log("Auto-Save Current Scene: " + savePath);
@@ -42,12 +42,10 @@ namespace Appalachia.Editor.AutoSave
         internal static string[] GetAutoSaveFiles()
         {
             var savePath = AutoSaverConfiguration.GetSaveDirectory();
-            
+
             var files = Directory.GetFiles(savePath)
                                  .Select(f => f.Replace('\\', '/'))
-                                 .Where(
-                                      f => f.EndsWith(".unity")
-                                  )
+                                 .Where(f => f.EndsWith(".unity"))
                                  .ToArray();
 
             return files;

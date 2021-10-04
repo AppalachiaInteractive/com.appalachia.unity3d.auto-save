@@ -22,9 +22,9 @@ namespace Appalachia.Editor.AutoSave
             var relativeSavePath = AutoSaverConfiguration.GetRelativeSaveDirectory();
 
             var saveFilePath = GetAutoSaveFilePath(newSave, relativeSavePath);
-            
+
             AutoSaverIO.SaveScene(scene, saveFilePath);
-            
+
             AutoSaverConfiguration.LastSave = AutoSaverConfiguration.EditorTimer;
         }
 
@@ -42,7 +42,7 @@ namespace Appalachia.Editor.AutoSave
 
                 while (saves.saves.Count > AutoSaverConfiguration.FilesCount)
                 {
-                    var first = saves.saves[0]; 
+                    var first = saves.saves[0];
                     saves.saves.RemoveAt(0);
 
                     var relativeBase = AutoSaverConfiguration.GetRelativeSaveDirectory();
@@ -50,21 +50,20 @@ namespace Appalachia.Editor.AutoSave
 
                     AssetDatabase.DeleteAsset(relativePath);
                 }
-                
+
                 saves.UpdateNames(saveNameIdentifier);
             }
         }
-        
+
         public static string GetAutoSaveFilePath(AutoSaveMetadata metadata, string relativeSavePath)
         {
             var saveNameIdentifier = AutoSaverConfiguration.FileName;
             var autosaveFileName = metadata.GetSaveFileName(saveNameIdentifier);
-            
+
             var filename = $"{autosaveFileName}.unity";
             var finalOutputPath = "{0}{1}".Format(relativeSavePath, filename);
 
             return finalOutputPath;
         }
-
     }
 }

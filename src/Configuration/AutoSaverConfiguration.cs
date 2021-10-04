@@ -12,13 +12,22 @@ namespace Appalachia.Editor.AutoSave.Configuration
     public static class AutoSaverConfiguration
     {
         private const string PREFIX = "Appalachia/Internal/AutoSave";
-        private static readonly CachedFloat _saveInterval = new CachedFloat("{0}/save-interval".Format(PREFIX), 5);
-        private static readonly CachedBool _debug = new CachedBool("{0}/debug".Format(PREFIX),        false);
-        private static readonly CachedBool _enable = new CachedBool("{0}/enable-save".Format(PREFIX), true);
-        private static readonly CachedInt _filesCount = new CachedInt("{0}/files-count".Format(PREFIX), 10);
-        private static readonly CachedFloat _lastSave = new CachedFloat("{0}/last-save".Format(PREFIX), 0);
-        private static readonly CachedString _fileName = new CachedString("{0}/file-name".Format(PREFIX), "AutoSave");
-        private static readonly CachedString _location = new CachedString("{0}/location".Format(PREFIX),  "_autosave");
+
+        private static readonly CachedFloat _saveInterval =
+            new("{0}/save-interval".Format(PREFIX), 5);
+
+        private static readonly CachedBool _debug = new("{0}/debug".Format(PREFIX), false);
+        private static readonly CachedBool _enable = new("{0}/enable-save".Format(PREFIX), true);
+        private static readonly CachedInt _filesCount = new("{0}/files-count".Format(PREFIX), 10);
+        private static readonly CachedFloat _lastSave = new("{0}/last-save".Format(PREFIX), 0);
+
+        private static readonly CachedString _fileName =
+            new("{0}/file-name".Format(PREFIX), "AutoSave");
+
+        private static readonly CachedString _location =
+            new("{0}/location".Format(PREFIX), "_autosave");
+
+        internal static string DateTimeFormat = "yyyy-MM-dd_HH-mm-ss";
 
         internal static float SaveInterval
         {
@@ -64,17 +73,15 @@ namespace Appalachia.Editor.AutoSave.Configuration
             set => _location.Current = value;
         }
 
-        internal static string DateTimeFormat = "yyyy-MM-dd_HH-mm-ss";
-        
         internal static string GetSaveDirectory()
         {
-            var savePath = Application.dataPath + "/" + AutoSaverConfiguration.Location;
+            var savePath = Application.dataPath + "/" + Location;
             return savePath;
         }
 
         internal static string GetRelativeSaveDirectory()
         {
-            var relativeSavePath = "Assets/" + AutoSaverConfiguration.Location + "/";
+            var relativeSavePath = "Assets/" + Location + "/";
             return relativeSavePath;
         }
     }

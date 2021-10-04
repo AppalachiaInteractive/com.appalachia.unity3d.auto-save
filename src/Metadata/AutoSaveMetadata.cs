@@ -9,12 +9,17 @@ namespace Appalachia.Editor.AutoSave.Metadata
     [Serializable]
     internal class AutoSaveMetadata
     {
+        public string sceneName;
+        public DateTime saveTime;
+        public string filePath;
+        public string fileName;
+
         public AutoSaveMetadata()
         {
             sceneName = "unsaved";
             saveTime = DateTime.Now;
         }
-        
+
         public AutoSaveMetadata(Scene scene)
         {
             sceneName = scene.name;
@@ -23,21 +28,16 @@ namespace Appalachia.Editor.AutoSave.Metadata
             {
                 sceneName = "unsaved";
             }
-            
+
             saveTime = DateTime.Now;
         }
-        
-        public string sceneName;
-        public DateTime saveTime;
-        public string filePath;
-        public string fileName;
 
         public string GetSaveFileName(string identifier)
         {
             var formattedTime = saveTime.ToString(AutoSaverConfiguration.DateTimeFormat);
             return $"{sceneName}.{identifier}.{formattedTime}";
         }
-        
+
         public static List<AutoSaveMetadata> FromFiles(string[] files)
         {
             var results = new List<AutoSaveMetadata>();

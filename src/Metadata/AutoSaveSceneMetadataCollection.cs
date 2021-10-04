@@ -10,6 +10,9 @@ namespace Appalachia.Editor.AutoSave.Metadata
     [Serializable]
     internal class AutoSaveSceneMetadataCollection
     {
+        private static readonly Comparison<AutoSaveMetadata> _sortKey = (a, b) =>
+            a.saveTime.CompareTo(b.saveTime);
+
         public string sceneName;
 
         public List<AutoSaveMetadata> saves;
@@ -28,12 +31,12 @@ namespace Appalachia.Editor.AutoSave.Metadata
                 var newFileName = save.GetSaveFileName(identifier) + ".unity";
 
                 var oldFileName = Path.GetFileName(relativePath);
-                
+
                 if (oldFileName == newFileName)
                 {
                     continue;
                 }
-                    
+
                 var renameResult = AssetDatabase.RenameAsset(relativePath, newFileName);
 
                 if (!string.IsNullOrEmpty(renameResult))
@@ -42,7 +45,5 @@ namespace Appalachia.Editor.AutoSave.Metadata
                 }
             }
         }
-
-        private static readonly Comparison<AutoSaveMetadata> _sortKey = (a, b) => a.saveTime.CompareTo(b.saveTime);
     }
 }

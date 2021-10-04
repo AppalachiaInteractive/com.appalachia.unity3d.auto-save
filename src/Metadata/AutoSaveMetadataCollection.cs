@@ -6,10 +6,12 @@ namespace Appalachia.Editor.AutoSave.Metadata
     [Serializable]
     internal class AutoSaveMetadataCollection
     {
-        public AutoSaveMetadataCollection (string[] files)
+        public Dictionary<string, AutoSaveSceneMetadataCollection> scenes;
+
+        public AutoSaveMetadataCollection(string[] files)
         {
             var saves = AutoSaveMetadata.FromFiles(files);
-            
+
             if (scenes == null)
             {
                 scenes = new Dictionary<string, AutoSaveSceneMetadataCollection>();
@@ -36,7 +38,5 @@ namespace Appalachia.Editor.AutoSave.Metadata
                 sceneMetadata.saves.Add(save);
             }
         }
-        
-        public Dictionary<string, AutoSaveSceneMetadataCollection> scenes;
     }
 }
