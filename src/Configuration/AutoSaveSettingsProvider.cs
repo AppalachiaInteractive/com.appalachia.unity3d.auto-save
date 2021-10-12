@@ -16,7 +16,7 @@ namespace Appalachia.Editor.AutoSave.Configuration
         [SettingsProvider]
         private static SettingsProvider MyNewPrefCode0()
         {
-            var p = new MyPrefSettingsProvider("Preferences/Auto-Save")
+            var p = new MyPrefSettingsProvider("Preferences/Appalachia/Auto-Save")
             {
                 keywords = new[] {"AutoSave"}
             };

@@ -3,7 +3,7 @@
 #region
 
 using UnityEditor;
-using UnityEngine;
+using UnityEngine.Device;
 
 #endregion
 
