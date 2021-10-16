@@ -1,6 +1,6 @@
 #if UNITY_EDITOR
 
-namespace Appalachia.Editor.AutoSave.Configuration
+namespace Appalachia.Utility.Editor.AutoSave.Configuration
 {
     internal abstract class Cached<T, TD>
     {

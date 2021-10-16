@@ -2,7 +2,7 @@
 
 using System.IO;
 using System.Linq;
-using Appalachia.Editor.AutoSave.Configuration;
+using Appalachia.Utility.Editor.AutoSave.Configuration;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
 
-namespace Appalachia.Editor.AutoSave
+namespace Appalachia.Utility.Editor.AutoSave
 {
     internal static class AutoSaverIO
     {

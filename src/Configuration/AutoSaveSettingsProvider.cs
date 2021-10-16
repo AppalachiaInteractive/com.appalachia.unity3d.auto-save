@@ -8,7 +8,7 @@ using UnityEngine;
 
 #if UNITY_EDITOR
 
-namespace Appalachia.Editor.AutoSave.Configuration
+namespace Appalachia.Utility.Editor.AutoSave.Configuration
 {
     [InitializeOnLoad]
     internal static class AutoSaveSettingsProvider

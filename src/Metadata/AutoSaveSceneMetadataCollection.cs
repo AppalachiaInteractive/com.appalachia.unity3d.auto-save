@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Appalachia.Editor.AutoSave.Configuration;
+using Appalachia.Utility.Editor.AutoSave.Configuration;
 using UnityEditor;
 using UnityEngine;
 
-namespace Appalachia.Editor.AutoSave.Metadata
+namespace Appalachia.Utility.Editor.AutoSave.Metadata
 {
     [Serializable]
     internal class AutoSaveSceneMetadataCollection

@@ -1,5 +1,5 @@
 {
-    "name": "Appalachia.Editor.AutoSave",
+    "name": "Appalachia.Utility.Editor.AutoSave",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [

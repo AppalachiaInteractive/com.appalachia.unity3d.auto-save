@@ -6,7 +6,7 @@ using UnityEditor;
 
 #endregion
 
-namespace Appalachia.Editor.AutoSave.Configuration
+namespace Appalachia.Utility.Editor.AutoSave.Configuration
 {
     internal class CachedBool : Cached<bool?, bool>
     {
