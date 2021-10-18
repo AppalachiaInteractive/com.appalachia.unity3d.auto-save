@@ -12,6 +12,12 @@
 ## Releasing
 | Hash | Date | Author | Changes |
 |------|------|--------|---------|
+| 5e619e3f11a87edb353820257b4be01accc478ca | 2021-10-17 | Chris Schubert | Fixing package jsons |
+
+
+ ## Tag: `v0.4.11`
+| Hash | Date | Author | Changes |
+|------|------|--------|---------|
 | 3b45f302fd0805696a59aee792967572aa6ea415 | 2021-10-16 | Chris Schubert | More project cleanup and refactoring |
 | 29e62c8483a55506693bd541bbad4cf4c9d530b6 | 2021-10-12 | Chris Schubert | Code cleanup |
 
